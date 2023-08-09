@@ -23,3 +23,18 @@ RENAME COLUMN ï»¿credit_card TO credit_card;
 ```
 
 
+# DATA TRANSFORMATIONS
+Create a view which combines the columns from both the tables with 'credit_card' column as unique common key
+```sql
+CREATE VIEW combined_cc_info AS
+SELECT f.credit_card, f.credit_card_limit, d.city, d.state, d.zipcode
+FROM cc_info_facts f
+INNER JOIN cc_info_dimensions d ON f.credit_card = d.credit_card;
+```
+
+
+View the created view
+```sql
+SELECT * FROM combined_cc_info;
+```
+
