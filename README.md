@@ -38,3 +38,11 @@ View the created view
 SELECT * FROM combined_cc_info;
 ```
 
+
+# DOING THE ANALYSIS
+Qn. Display the average credit limit for each State in the database.
+```sql
+SELECT state, AVG(credit_card_limit) AS average_credit_limit
+FROM combined_cc_info
+GROUP BY state;
+```
